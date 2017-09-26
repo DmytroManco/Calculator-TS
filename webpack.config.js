@@ -5,14 +5,17 @@ module.exports = {
 	entry: './src/index.ts',
 	devtool: 'inline-source-map',
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.tsx?$/,
 				use: 'ts-loader'
 			},
 			{
-				test: /\.css$/,
-				loader: "style-loader!css-loader"
+				test: /\.scss$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: ['css-loader', 'sass-loader']
+				})
 			}
 		]
 	},
@@ -22,5 +25,8 @@ module.exports = {
 	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist')
-	}
+	},
+	plugins: [
+		new ExtractTextPlugin('style.css')
+	]
 };

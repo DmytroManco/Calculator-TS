@@ -1,6 +1,6 @@
 import {controller as ctr} from "./scripts/presenter";
 import {view} from "./scripts/view";
-import './style/style';
+import './style/style.scss';
 
 let container = document.getElementById('calculator');
 
