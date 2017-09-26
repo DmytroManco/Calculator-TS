@@ -2,11 +2,11 @@ import {calculator} from "./calculator";
 import {controller as ctr} from "./presenter";
 
 let fragment = document.createDocumentFragment();
-let container = document.getElementById('calculator');
+let container:HTMLElement = document.getElementById('calculator');
 
 let view = {
-    render: function () {
-        for(let i = 0; i < calculator.buttons.length; i++) {
+    render: function ():void {
+        for(let i:number = 0; i < calculator.buttons.length; i++) {
             if(calculator.buttons[i].className === 'screen') {
                 calculator.buttons[i].setAttribute('disabled', 'disabled');
             }

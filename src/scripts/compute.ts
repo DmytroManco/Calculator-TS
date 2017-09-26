@@ -1,4 +1,4 @@
-function compute(equation) {
+function compute(equation:string): number | string{
     try {
         return +eval(equation).toFixed(10);
     } catch (err) {

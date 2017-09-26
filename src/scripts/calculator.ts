@@ -2,7 +2,7 @@ import {makeBtn} from "./button";
 
 let calculator = {
     buttons: [],
-    addButton: function(className, value, innerHtml, type) {
+    addButton: function(className:string, value:string, innerHtml:string, type:string) {
         this.buttons.push(makeBtn(className, value, innerHtml, type));
     }
 };

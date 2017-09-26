@@ -1,7 +1,8 @@
 import {calculator} from "./calculator";
 import {compute} from "./compute";
+import {Keys} from "./keys";
 
-let equation = '';
+let equation:string = '';
 
 let controller = {
 
@@ -37,61 +38,61 @@ let controller = {
     keysEvent: function (input) {
         document.body.addEventListener('keypress', function (e) {
             switch (e.keyCode) {
-                case 48: input.value += 0;
+                case Keys.zero: input.value += 0;
                     equation += 0;
                     break;
-                case 49: input.value += 1;
+                case Keys.one: input.value += 1;
                     equation += 1;
                     break;
-                case 50: input.value += 2;
+                case Keys.two: input.value += 2;
                     equation += 2;
                     break;
-                case 51: input.value += 3;
+                case Keys.three: input.value += 3;
                     equation += 3;
                     break;
-                case 52: input.value += 4;
+                case Keys.four: input.value += 4;
                     equation += 4;
                     break;
-                case 53: input.value += 5;
+                case Keys.five: input.value += 5;
                     equation += 5;
                     break;
-                case 54: input.value += 6;
+                case Keys.six: input.value += 6;
                     equation += 6;
                     break;
-                case 55: input.value += 7;
+                case Keys.seven: input.value += 7;
                     equation += 7;
                     break;
-                case 56: input.value += 8;
+                case Keys.eight: input.value += 8;
                     equation += 8;
                     break;
-                case 57: input.value += 9;
+                case Keys.nine: input.value += 9;
                     equation += 9;
                     break;
-                case 46:
+                case Keys.dot:
                     input.value += '.';
                     equation += '.';
                     break;
-                case 45:
+                case Keys.minus:
                     input.value += '-';
                     equation += '-';
                     break;
-                case 43:
+                case Keys.plus:
                     input.value += '+';
                     equation += '+';
                     break;
-                case 42:
+                case Keys.multiple:
                     input.value += '*';
                     equation += '*';
                     break;
-                case 47:
+                case Keys.divide:
                     input.value += '/';
                     equation += '/';
                     break;
-                case 94:
+                case Keys.power:
                     input.value += '^';
                     equation += '**';
                     break;
-                case 13:
+                case Keys.enter:
                     input.value = compute(equation);
                     equation = input.value;
                     break;

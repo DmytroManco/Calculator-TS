@@ -1,4 +1,4 @@
-function makeBtn(className:string, value:string, innerHtml:string, type:string){
+function makeBtn(className:string, value:string, innerHtml:string, type:string):HTMLElement{
     let el = <HTMLInputElement>document.createElement(type);
     el.classList.add(className);
     el.value = value;
